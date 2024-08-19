@@ -31,7 +31,7 @@ def voice_loader(selected_voices: list, extra_voice_dirs: List[str]):
 
 
 def parse_multiarg_text(text: List[str]):
-    return (" ".join(text) if text else "".join(line for line in sys.stdin)).strip()
+    return " ".join(text).strip()
 
 
 def split_text(text: str, text_split: str):
