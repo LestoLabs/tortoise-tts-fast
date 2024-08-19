@@ -35,7 +35,6 @@ backports-zoneinfo==0.2.1 ; python_version >= "3.8" and python_version < "3.9" \
 beautifulsoup4==4.11.2 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:0e79446b10b3ecb499c1556f7e228a53e64a2bfcebd455f370d8927cb5b59e39 \
     --hash=sha256:bc4bdda6717de5a2987436fb8d72f45dc90dd856bdfd512a1314ce90349a0106
-bigvgan @ git+https://github.com/152334H/BigVGAN.git@HEAD ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12"
 blinker==1.5 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:1eb563df6fdbc39eeddc177d953203f99f097e9bf0e2b8f9f3cf18b6ca425e36 \
     --hash=sha256:923e5e2f69c155f2cc42dafbbd70e16e3fde24d2d4aa2ab72fbe386238892462
@@ -1334,9 +1333,6 @@ torchdiffeq==0.2.3 ; python_version >= "3.8" and python_version < "3.12" and pyt
 torchlibrosa==0.0.7 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:d4c832a8a61f5af57374ec1c6427f860de56a9be9349d1fc9a4fdbb106927471 \
     --hash=sha256:d6c89ec88070ea19175afe957462ffef056b7512b92c37ba38a01fb76bedb8bd
-torchsde==0.2.5 ; python_version >= "3.8" and python_version < "3.12" and python_full_version != "3.9.7" \
-    --hash=sha256:222be9e15610d37a4b5a71cfa0c442178f9fd9ca02f6522a3e11c370b3d0906b \
-    --hash=sha256:4c34373a94a357bdf60bbfee00c850f3563d634491555820b900c9a4f7eff300
 torchvision==0.14.1 ; python_version >= "3.8" and python_full_version != "3.9.7" and python_version < "3.12" \
     --hash=sha256:0ed02aefd09bf1114d35f1aa7dce55aa61c2c7e57f9aa02dce362860be654e85 \
     --hash=sha256:13986f0c15377ff23039e1401012ccb6ecf71024ce53def27139e4eac5a57592 \
