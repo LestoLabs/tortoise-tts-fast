@@ -1,0 +1,34 @@
+build:
+  gpu: true
+  cuda: "11.7"
+
+  system_packages:
+    - libsndfile-dev
+    - ffmpeg
+    - git
+    - wget
+
+  python_version: "3.8"
+
+  python_requirements: new_requirements.txt
+  
+  run:
+    - mkdir /src && git clone https://github.com/LestoLabs/tortoise-tts-fast.git /src && cd /src && pip install -e .
+    - pip install git+https://github.com/152334H/BigVGAN.git
+    - pip install --force-reinstall pip==19.0.1 && pip install voicefixer==0.1.2 
+    - mkdir -p /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/autoregressive.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/classifier.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/clvp2.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/cvvp.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/diffusion_decoder.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/vocoder.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/rlg_auto.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/rlg_diffuser.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_base_24khz_100band_g.pth' -P /root/.cache/tortoise/models/
+    - wget -c 'https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_24khz_100band_g.pth' -P /root/.cache/tortoise/models/
+    - pip install -U "huggingface_hub[cli]" && huggingface-cli download jbetker/wav2vec2-large-robust-ft-libritts-voxpopuli && huggingface-cli download facebook/wav2vec2-large-960h && huggingface-cli download jbetker/tacotron-symbols
+    - wget -c 'https://zenodo.org/record/5600188/files/vf.ckpt' -P /root/.cache/voicefixer/analysis_module/checkpoints/
+    - wget -c 'https://zenodo.org/record/5469951/files/model.ckpt-1490000_trimed.pt' -P /root/.cache/voicefixer/synthesis_module/44100/
+
+predict: "predict.py:Predictor"
