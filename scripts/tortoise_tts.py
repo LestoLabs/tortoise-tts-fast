@@ -6,7 +6,8 @@ import sys
 import tempfile
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Literal, Optional
+from typing import Optional
+from typing_extensions import Literal
 
 import torch
 import torchaudio
@@ -262,6 +263,7 @@ if __name__ == "__main__":
     if not args.general.text:
         print("reading text from stdin!")
     text = parse_multiarg_text(args.general.text)
+    print(args.advanced.text_split)
     texts = split_text(text, args.advanced.text_split)
 
     output_dir = validate_output_dir(
