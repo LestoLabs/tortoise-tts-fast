@@ -164,6 +164,7 @@ def load_voices(voices: List[str], extra_voice_dirs: List[str] = []):
                 len(clips) == 0
             ), "Can only combine raw audio voices or latent voices, not both. Do it yourself if you want this."
             latents.append(latent)
+            
     if len(latents) == 0:
         return clips, None
     else:

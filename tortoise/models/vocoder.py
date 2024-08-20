@@ -404,6 +404,7 @@ class UnivNetGenerator(nn.Module):
 from pathlib import Path
 STATIC_DIR = Path(__file__).parent.parent.parent/'static'
 assert STATIC_DIR.is_dir()
+
 def BVGWithConf(fname: str):
     json_config = json.loads(
         (STATIC_DIR/fname).read_text()

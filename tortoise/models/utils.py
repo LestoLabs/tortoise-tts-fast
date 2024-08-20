@@ -25,8 +25,8 @@ MODELS = {
     "rlg_auto.pth": "https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/rlg_auto.pth",
     "rlg_diffuser.pth": "https://huggingface.co/jbetker/tortoise-tts-v2/resolve/main/.models/rlg_diffuser.pth",
     # these links are from the nvidia gdrive
-    "bigvgan_base_24khz_100band_g.pth": "https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_base_24khz_100band_g",
-    "bigvgan_24khz_100band_g.pth": "https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_24khz_100band_g",
+    "bigvgan_base_24khz_100band_g.pth": "https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_base_24khz_100band_g.pth",
+    "bigvgan_24khz_100band_g.pth": "https://huggingface.co/leduyson2603/tortoise-weights/resolve/main/bigvgan_24khz_100band_g.pth",
 }
 
 

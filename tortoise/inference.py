@@ -166,7 +166,6 @@ from voicefixer import VoiceFixer
 
 vfixer = VoiceFixer()
 
-
 def save_gen_with_voicefix(g, fpath, squeeze=True, voicefixer=True):
     torchaudio.save(fpath, g.squeeze(0).cpu() if squeeze else g, 24000, format="wav")
     if voicefixer:
