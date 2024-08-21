@@ -5,7 +5,6 @@ import tempfile
 import warnings
 
 import torch
-import torchaudio
 from cog import BasePredictor, Input, Path
 
 from tortoise.api import MODELS_DIR, TextToSpeech
@@ -195,7 +194,7 @@ class Predictor(BasePredictor):
 
         if custom_voice is not None:
             assert (
-                custom_voice.suffix == ".mp3"
+                custom_voice.suffix.lower() == ".mp3"
             ), f"File {custom_voice} is not an mp3 file"
             print(f"Creating voice from {custom_voice}")
             # remove the custom voice dir if it exists
